@@ -8,15 +8,16 @@
   box-sizing: border-box;
 
   --nav-width: 240px;
-  --header-height: 100px;
+  --header-height: 150px;
 
   --project-blue: #1a92d3;
   --project-yellow: #F0B429;
-  --project-grey: #E2E8F0;
+  --project-grey: #e2e8f0;
 }
 
 body{
   font-family: 'Roboto', system-ui, sans-serif;
+  height: 100vh;
 }
 
 nav{
@@ -24,6 +25,7 @@ nav{
   padding: 12px;
   height: 100vh;
   position: fixed;
+  z-index: 1;
   display: grid;
   grid-template-rows: repeat(3, max-content);
   gap: 28px;
@@ -37,6 +39,7 @@ nav{
   display: flex;
   gap: 12px;
   align-items: center;
+  cursor: pointer;
 }
 .logo h2{
   font-size: 24px;
@@ -68,7 +71,7 @@ nav{
 .nav-gr1, .nav-gr2{
   display: grid;
   grid-template-rows: repeat(6, max-content);
-  gap: 12px;
+  gap: 4px;
   font-weight: 600;
 }
 .home::before,
@@ -80,8 +83,6 @@ nav{
 .settings::before,
 .support::before,
 .privacy::before{
-  position: relative;
-  top: 4px;
   margin-right: 12px;
 
   font-family: 'MaterialIcons';
@@ -116,34 +117,117 @@ nav{
 .privacy::before{
   content: '\ea17';
 }
-
+.navbtn{
+  display: flex;
+  align-items: center;
+  padding: 8px 0 8px 12px;
+  cursor: pointer;
+  border-radius: 50px;
+}
 
 header{
   width: calc(100vw - var(--nav-width));
   position: fixed;
-  z-index: -1;
   left: var(--nav-width);
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  gap: 16px;
   
   height: var(--header-height);
   background-color: white;
   box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.5);
-  padding: 16px;
+  padding: 8px  40px;
 }
 
 .top-bar{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+form:has(#search){
   display: flex;
   align-items: center;
-  height: 100px;
 }
-
-.search-field{
+label[for='search']{
+  font-family: 'MaterialIcons';
+  font-size: 24px;
+  padding-right: 16px;
+}
+input#search{
+  display: block;
   flex: 1;
   background-color: var(--project-grey);
+  border: none;
   border-radius: 100px;
+  outline: none;
   height: 25px;
+  padding: 18px 16px;
+  font-size: 16px;
 }
+
+
+.personal-controls{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.notifications{
+  font-family: 'MaterialIcons';
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.top-bar-profile{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+.avatar{
+  width: 40px;
+  height: 40px;
+  background-image: url(img/Frame\ 14.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.personal-controls h2{
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+
+
+.controls{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto auto auto;
+  gap: 12px;
+}
+.controls .avatar{
+  width: 65px;
+  height: 65px;
+}
+.controls h3{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.controls h1{
+  font-size: 20px;
+  font-weight: 600;
+}
+.controls button{
+  background-color: var(--project-blue);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 
 main{
   position: relative;
