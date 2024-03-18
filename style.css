@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'MaterialIcons';
+  font-style: normal;
+  src: url(icons.woff2) format('woff2');
+}
+
 *{
   box-sizing: border-box;
 
-  --nav-width: 200px;
+  --nav-width: 240px;
   --header-height: 100px;
 
   --project-blue: #1a92d3;
@@ -24,7 +30,7 @@ nav{
 
   background-color: var(--project-blue);
   color: white;
-  padding: 16px;
+  padding: 30px;
 }
 
 .logo{
@@ -34,7 +40,7 @@ nav{
 }
 .logo h2{
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .logo-grid{
   width: 30px;
@@ -63,10 +69,54 @@ nav{
   display: grid;
   grid-template-rows: repeat(6, max-content);
   gap: 12px;
-}
-.navbtn{
   font-weight: 600;
 }
+.home::before,
+.profile::before,
+.messages::before,
+.history::before,
+.tasks::before,
+.communities::before,
+.settings::before,
+.support::before,
+.privacy::before{
+  position: relative;
+  top: 4px;
+  margin-right: 12px;
+
+  font-family: 'MaterialIcons';
+  font-weight: 500;
+  font-variation-settings: 'FILL' 1;
+  font-size: 24px;
+}
+.home::before{
+  content: '\e88a';
+}
+.profile::before{
+  content: '\e708';
+}
+.messages::before{
+  content: '\e0b7';
+}
+.history::before{
+  content: '\e889';
+}
+.tasks::before{
+  content: '\e1dd';
+}
+.communities::before{
+  content: '\f233';
+}
+.settings::before{
+  content: '\e8b8';
+}
+.support::before{
+  content: '\e887';
+}
+.privacy::before{
+  content: '\ea17';
+}
+
 
 header{
   width: calc(100vw - var(--nav-width));
@@ -74,7 +124,7 @@ header{
   z-index: -1;
   left: var(--nav-width);
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
   
   height: var(--header-height);
   background-color: white;
