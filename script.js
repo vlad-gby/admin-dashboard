@@ -1,18 +1,20 @@
 // ADD EVENT-LISTENERS
 const buttons = document.querySelectorAll('.navbtn, .controls button');
-const bell = document.querySelector('.notifications');
+const roundBtn = document.querySelectorAll('.notifications, .star, .eye, .share');
 
-bell.addEventListener('mouseover', e => {
-  bell.style.backgroundColor = 'rgb(226, 232, 240)';
-});
-bell.addEventListener('mouseout', e => {
-  bell.style.backgroundColor = 'rgb(255, 255, 255)';
-});
-bell.addEventListener('mousedown', e => {
-  bell.style.backgroundColor = 'rgb(206, 212, 220)';
-});
-bell.addEventListener('mouseup', e => {
-  bell.style.backgroundColor = 'rgb(226, 232, 240)';
+roundBtn.forEach(button => {
+  button.addEventListener('mouseover', e => {
+    button.style.backgroundColor = 'rgb(226, 232, 240)';
+  });
+  button.addEventListener('mouseout', e => {
+    button.style.backgroundColor = 'rgb(255, 255, 255)';
+  });
+  button.addEventListener('mousedown', e => {
+    button.style.backgroundColor = 'rgb(206, 212, 220)';
+  });
+  button.addEventListener('mouseup', e => {
+    button.style.backgroundColor = 'rgb(226, 232, 240)';
+  });
 });
 
 buttons.forEach(button => {
