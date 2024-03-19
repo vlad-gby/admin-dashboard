@@ -39,6 +39,7 @@ nav{
   gap: 12px;
   align-items: center;
   cursor: pointer;
+  user-select: none;
 }
 .logo h2{
   font-size: 24px;
@@ -120,6 +121,7 @@ nav{
   align-items: center;
   padding: 10px 0 10px 12px;
   cursor: pointer;
+  user-select: none;
   border-radius: 50px;
 }
 
@@ -179,12 +181,14 @@ input#search{
   padding: 8px;
   border-radius: 50px;
   cursor: pointer;
+  user-select: none;
 }
 .top-bar-profile{
   display: flex;
   align-items: center;
   gap: 16px;
   cursor: pointer;
+  user-select: none;
 }
 .avatar{
   width: 40px;
@@ -226,6 +230,7 @@ input#search{
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+  user-select: none;
 }
 
 
