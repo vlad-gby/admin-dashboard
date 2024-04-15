@@ -195,6 +195,7 @@ input#search{
   height: 40px;
   background-image: url(img/Frame-14.png);
   background-size: contain;
+  flex: 1 0 auto;
 }
 .personal-controls h2{
   font-weight: 700;
